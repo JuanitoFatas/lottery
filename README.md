@@ -4,6 +4,12 @@ Lottery Generator
 
 ## Installation
 
+Install dependencies:
+
+    $ bundle install
+
+Install Lottery:
+
     $ gem install lottery
 
 ## Usage
