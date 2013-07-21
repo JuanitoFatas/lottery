@@ -1,24 +1,50 @@
 # Lottery
 
-TODO: Write a gem description
+Lottery Generator
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'lottery'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install lottery
 
 ## Usage
 
-TODO: Write usage instructions here
+### Europe
+
+__Generate Euro Million Numbers:__
+
+    lottery eu
+
+__Generate Lotto Numbers:__
+
+    lottery eu 1
+
+__Generate Thunderball Numbers:__
+
+    lottery eu 2
+
+### Spain
+
+__Generate Daily 6/49:__
+
+    lottery es
+
+__Generate Sunday 5/54+1:__
+
+    lottery es 1
+
+__Generate Spanish 6/49:__
+
+    lottery es 2
+
+### Taiwan
+
+__產生威力彩號碼：__
+
+    lottery tw
+
+__產生大樂透號碼：__
+
+    lottery tw 1
 
 ## Contributing
 
@@ -27,3 +53,11 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Author
+
+Juanito Fatas
+
+## License
+
+MIT License
