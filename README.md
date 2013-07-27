@@ -1,20 +1,16 @@
 # Lottery
 
-Lottery Generator
+Go buy a ticket by 100% Ruby chosen numbers and be the next jackpot winner!
 
 ## Installation
-
-Install dependencies:
-
-    $ bundle install
 
 Install Lottery:
 
     $ gem install lottery
 
-## Usage
+## Where are you from?
 
-### Europe
+### Europe?
 
 __Generate Euro Million Numbers:__
 
@@ -28,7 +24,7 @@ __Generate Thunderball Numbers:__
 
     lottery eu 2
 
-### Spain
+### Spain?
 
 __Generate Daily 6/49:__
 
@@ -42,7 +38,7 @@ __Generate Spanish 6/49:__
 
     lottery es 2
 
-### Taiwan
+### Taiwan?
 
 __產生威力彩號碼：__
 
@@ -52,13 +48,17 @@ __產生大樂透號碼：__
 
     lottery tw 1
 
+__產生今彩 539 號碼：__
+
+    lottery tw 2
+
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Fork it.
+2. Create your feature branch (`git checkout -b my-new-feature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin my-new-feature`).
+5. Create new Pull Request.
 
 ## Author
 

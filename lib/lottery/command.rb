@@ -10,7 +10,7 @@ module Lottery
 
       generates European lottery numbers. Support Euro Millions, Lotto and Thunderball.
 
-    $ lottery eu will generate European numbers.
+    $ lottery eu will generate Euro Millions numbers.
 
     $ lottery eu 1 will generate Lotto numbers.
 
