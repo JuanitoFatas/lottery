@@ -3,14 +3,19 @@ module Lottery
     include Lottery::LotteryHelper
     extend self
 
-    # 威力彩
+    # SuperLotto638
     def super_lotto_638
       make_hash(draw(38, 6), draw(8, 1))
     end
 
-    # 6/49 大樂透
+    # Lotto649
     def lotto_649
       make_hash(draw(49, 6))
+    end
+
+    # Daily Cash
+    def daily_cash
+      make_hash(draw(39, 5))
     end
 
   end

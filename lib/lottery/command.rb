@@ -2,13 +2,21 @@ require 'thor'
 
 module Lottery
   class Command < Thor
-    include Thor::Actions
+    package_name "Lottery"
 
-    def self.source_root
-      File.dirname(__FILE__)
-    end
+    desc 'eu [type]', 'lotteries in Europe. Including Euro Millions, Lotto, and Thunderball.'
+    long_desc <<-EU_LONGDESC
+    $ lottery eu
 
-    desc 'eu [type]', 'lottery in Europe. type: Not given => Euro Millions, 1: lotto, 2: Thunderball.'
+      generates European lottery numbers. Support Euro Millions, Lotto and Thunderball.
+
+    $ lottery eu will generate European numbers.
+
+    $ lottery eu 1 will generate Lotto numbers.
+
+    $ lottery eu 2 will generate Thunderball numbers.
+    ...
+    EU_LONGDESC
     def eu(which = 0)
       case which.to_i
         when 1 then puts 'Lotto:';      Lottery::Europe.lotto.pprint
@@ -17,20 +25,36 @@ module Lottery
       end
     end
 
-    desc 'tw [類型]', 'lottery in Taiwan. 類型預設：威力彩。輸入 1 為大樂透。'
+    desc 'tw [類型]', 'Lotteries in Taiwan. Including Lotto649, SuperLotto638, and Daily Cash.'
     long_desc <<-LONGDESC
-    lottery tw 會產生臺灣的樂透號碼。支援威力彩與大樂透。
+    $ lottery tw
 
-    lottery tw 預設產生威力彩號碼，你可以輸入 lottery tw 1 來產生大樂透號碼。
+      generates Taiwanese Lottery numbers. Support SuperLotto638, Lotto649, and Daily Cash.
+
+    $ lottery tw will generate SuperLotto638 numbers.
+
+    $ lottery tw 1 will generate Lotto649 numbers.
+
+    $ lottery tw 2 will generate Daily Cash numbers.
     LONGDESC
     def tw(which = 0)
       case which.to_i
-        when 1 then puts '6/49 大樂透'; Lottery::Taiwan.lotto_649.pprint first_name: '號碼'
-        else puts '威力彩:';            Lottery::Taiwan.super_lotto_638.pprint first_name: '第一區', second_name: '第二區'
+        when 1 then puts '6/49 Lotto';      Lottery::Taiwan.lotto_649.pprint
+        when 2 then puts 'Daily Cash 539:'; Lottery::Taiwan.daily_cash.pprint
+        else puts 'Super Lotto 638:';       Lottery::Taiwan.super_lotto_638.pprint first_name: '1st zone', second_name: '2nd zone'
       end
     end
 
-    desc 'es', 'lottery in Spain. Default: Daily 6/49, 1: Sunday 5/54+1, 2: Spainsh 6/49.'
+    desc 'es', 'lotteries in Spain. Including Daily 6/49, Sunday 5/54+1, and Spainsh 6/49.'
+    long_desc <<-ES_LONGDESC
+      generates Spanish Lottery numbers. Support Daily 6/49, Sunday 5/54+1, and Spainsh 6/49.
+
+    $ lottery es will generate Daily 6/49 numbers.
+
+    $ lottery es 1 will generate Sunday 5/54+1 numbers.
+
+    $ lottery es 2 will generate Spainsh 6/49 numbers.
+    ES_LONGDESC
     def es(which = 0)
       case which.to_i
         when 1 then puts 'Sunday 5/54+1'; Lottery::Spain.sunday_5_54_plus1.pprint second_name: 'de matrix'
