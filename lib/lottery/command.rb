@@ -15,11 +15,10 @@ module Lottery
     $ lottery eu 1 will generate Lotto numbers.
 
     $ lottery eu 2 will generate Thunderball numbers.
-    ...
     EU_LONGDESC
     def eu(which = 0)
       case which.to_i
-        when 1 then puts 'Lotto:';      Lottery::Europe.lotto.pprint
+        when 1 then puts 'Lotto:';       Lottery::Europe.lotto.pprint
         when 2 then puts 'Thunderball:'; Lottery::Europe.thunderball.pprint second_name: 'Thunderball number'
         else puts 'Euro Millions:';      Lottery::Europe.euro_millions.pprint second_name: 'Lucky Stars'
       end
@@ -39,7 +38,7 @@ module Lottery
     LONGDESC
     def tw(which = 0)
       case which.to_i
-        when 1 then puts '6/49 Lotto:';      Lottery::Taiwan.lotto_649.pprint
+        when 1 then puts '6/49 Lotto:';     Lottery::Taiwan.lotto_649.pprint
         when 2 then puts 'Daily Cash 539:'; Lottery::Taiwan.daily_cash.pprint
         else puts 'Super Lotto 638:';       Lottery::Taiwan.super_lotto_638.pprint first_name: '1st zone', second_name: '2nd zone'
       end
