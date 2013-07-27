@@ -1,3 +1,7 @@
+## v0.0.3
+
+* Fix a incorrect description in Europe region.
+
 ## v0.0.2
 
 * Changes for consistentency.
