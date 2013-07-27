@@ -20,12 +20,12 @@ module Lottery
     def eu(which = 0)
       case which.to_i
         when 1 then puts 'Lotto:';      Lottery::Europe.lotto.pprint
-        when 2 then puts 'Thunderball'; Lottery::Europe.thunderball.pprint second_name: 'Thunderball number'
-        else puts 'Euro Millions';      Lottery::Europe.euro_millions.pprint second_name: 'Lucky Stars'
+        when 2 then puts 'Thunderball:'; Lottery::Europe.thunderball.pprint second_name: 'Thunderball number'
+        else puts 'Euro Millions:';      Lottery::Europe.euro_millions.pprint second_name: 'Lucky Stars'
       end
     end
 
-    desc 'tw [類型]', 'Lotteries in Taiwan. Including Lotto649, SuperLotto638, and Daily Cash.'
+    desc 'tw [type]', 'Lotteries in Taiwan. Including Lotto649, SuperLotto638, and Daily Cash.'
     long_desc <<-LONGDESC
     $ lottery tw
 
@@ -39,7 +39,7 @@ module Lottery
     LONGDESC
     def tw(which = 0)
       case which.to_i
-        when 1 then puts '6/49 Lotto';      Lottery::Taiwan.lotto_649.pprint
+        when 1 then puts '6/49 Lotto:';      Lottery::Taiwan.lotto_649.pprint
         when 2 then puts 'Daily Cash 539:'; Lottery::Taiwan.daily_cash.pprint
         else puts 'Super Lotto 638:';       Lottery::Taiwan.super_lotto_638.pprint first_name: '1st zone', second_name: '2nd zone'
       end
@@ -57,9 +57,9 @@ module Lottery
     ES_LONGDESC
     def es(which = 0)
       case which.to_i
-        when 1 then puts 'Sunday 5/54+1'; Lottery::Spain.sunday_5_54_plus1.pprint second_name: 'de matrix'
-        when 2 then puts 'Spanish 6/49';  Lottery::Spain.spanish_6_49.pprint
-        else puts 'Daily 6/49';           Lottery::Spain.daily_6_49.pprint
+        when 1 then puts 'Sunday 5/54+1:'; Lottery::Spain.sunday_5_54_plus1.pprint second_name: 'de matrix'
+        when 2 then puts 'Spanish 6/49:';  Lottery::Spain.spanish_6_49.pprint
+        else puts 'Daily 6/49:';           Lottery::Spain.daily_6_49.pprint
       end
     end
 
