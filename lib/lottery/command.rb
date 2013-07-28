@@ -24,23 +24,29 @@ module Lottery
       end
     end
 
-    desc 'tw [type]', 'Lotteries in Taiwan. Including Lotto649, SuperLotto638, and Daily Cash.'
-    long_desc <<-LONGDESC
+    desc 'tw [type]', 'Lotteries in Taiwan. Including Lotto649, SuperLotto638, Daily Cash, 3 stars and 4 stars.'
+    long_desc <<-TW_LONGDESC
     $ lottery tw
 
-      generates Taiwanese Lottery numbers. Support SuperLotto638, Lotto649, and Daily Cash.
+      generates Taiwanese Lottery numbers. Support SuperLotto638, Lotto649, Daily Cash, 3 stars and 4 stars.
 
     $ lottery tw will generate SuperLotto638 numbers.
 
     $ lottery tw 1 will generate Lotto649 numbers.
 
     $ lottery tw 2 will generate Daily Cash numbers.
-    LONGDESC
+
+    $ lottery tw 3 will generate 3 stars numbers.
+
+    $ lottery tw 4 will generate 4 stars numbers.
+    TW_LONGDESC
     def tw(which = 0)
       case which.to_i
-        when 1 then puts '6/49 Lotto:';     Lottery::Taiwan.lotto_649.pprint
-        when 2 then puts 'Daily Cash 539:'; Lottery::Taiwan.daily_cash.pprint
-        else puts 'Super Lotto 638:';       Lottery::Taiwan.super_lotto_638.pprint first_name: '1st zone', second_name: '2nd zone'
+        when 1 then puts '6/49 Lotto:';      Lottery::Taiwan.lotto_649.pprint
+        when 2 then puts 'Daily Cash 539:';  Lottery::Taiwan.daily_cash_539.pprint
+        when 3 then printf "3 stars: %s\n" % Lottery::Taiwan.three_stars
+        when 4 then printf "4 stars: %s\n" % Lottery::Taiwan.four_stars
+        else puts 'Super Lotto 638:';        Lottery::Taiwan.super_lotto_638.pprint first_name: '1st zone', second_name: '2nd zone'
       end
     end
 
