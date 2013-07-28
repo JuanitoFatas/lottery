@@ -1,3 +1,11 @@
+## v0.0.5
+
+* add two new lotteries for Taiwan.
+
+## v0.0.4
+
+* bug fixes.
+
 ## v0.0.3
 
 * Fix a incorrect description in Europe region.
